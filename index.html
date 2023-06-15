@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Book List</title>
+  </head>
+  <body class="bg-parallax">
+    <div>
+      <div class="container">
+        <h1>Book List</h1>
+        <input style="margin-bottom: 10px" type="text" id="search-input" placeholder="Search by title" />
+        <ul class="book-list">
+          <li>
+            <img src="./cover/hari_mengesankan.jpg" alt="Book 1" />
+            <div class="book-info">
+              <h2>Hari yang Mengesankan</h2>
+              <p>Penulis : Mia Singh</p>
+              <p>Badan Pengembangan dan Pembinaan Bahasa Kemendikbud</p>
+              <a href="https://badanbahasa.kemdikbud.go.id/resource/doc/files/100_Hari_yang_Mengesankan.pdf" target="_blank" class="read-button">Baca</a>
+            </div>
+          </li>
+          <li>
+            <img src="./cover/tikus_cerdik.jpg" alt="Book 2" />
+            <div class="book-info">
+              <h2>Tikus yang Cerdik</h2>
+              <p>Penulis : Ashishkumar Trivedi</p>
+              <p>Badan Pengembangan dan Pembinaan Bahasa Kemendikbud</p>
+              <a href="https://badanbahasa.kemdikbud.go.id/resource/doc/files/148_Tikus_yang_Cerdik_-_Defiyan_Saputra_Simbolon.pdf" target="_blank" class="read-button">Baca</a>
+            </div>
+          </li>
+          <li>
+            <img src="./cover/mencuci_pakaian.jpg" alt="Book 3" />
+            <div class="book-info">
+              <h2>Mencuci Pakaian</h2>
+              <p>Penulis : Hello English</p>
+              <p>Badan Pengembangan dan Pembinaan Bahasa Kemendikbud</p>
+              <a href="https://badanbahasa.kemdikbud.go.id/resource/doc/files/154_Mencuci_Pakaian.pdf" target="_blank" class="read-button">Baca</a>
+            </div>
+          </li>
+          <li>
+            <img src="./cover/pesawat.jpg" alt="Book 4" />
+            <div class="book-info">
+              <h2>Bagaimana Pesawat Bisa Terbang</h2>
+              <p>Penulis : Aditi Sarawagi</p>
+              <p>Badan Pengembangan dan Pembinaan Bahasa Kemendikbud</p>
+              <a href="https://badanbahasa.kemdikbud.go.id/resource/doc/files/159_Bagaimana_Pesawat_Bisa_Terbang_(Recovered_1).pdf" target="_blank" class="read-button">Baca</a>
+            </div>
+          </li>
+          <li>
+            <img src="./cover/kisahhdup.jpg" alt="Book 5" />
+            <div class="book-info">
+              <h2>Kisah Hidup</h2>
+              <p>Penulis : Ruby Thomas</p>
+              <p>Badan Pengembangan dan Pembinaan Bahasa Kemendikbud</p>
+              <a href="https://badanbahasa.kemdikbud.go.id/resource/doc/files/101_Kisah_Hidup.pdf" target="_blank" class="read-button">Baca</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <script>
+      document.getElementById("search-input").addEventListener("input", function () {
+        var searchValue = this.value.toLowerCase();
+        var bookList = document.getElementsByClassName("book-info");
+
+        for (var i = 0; i < bookList.length; i++) {
+          var bookTitle = bookList[i].getElementsByTagName("h2")[0].innerText.toLowerCase();
+          var li = bookList[i].parentNode;
+
+          if (bookTitle.includes(searchValue)) {
+            li.style.display = "";
+          } else {
+            li.style.display = "none";
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
